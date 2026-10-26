@@ -304,37 +304,27 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function returnToReferringPage() {
-            // 1. Check if a explicit return URL was passed in the query params (e.g. ?returnUrl=... or ?from=...)
-            const urlParams = new URLSearchParams(window.location.search);
-            const explicitReturnUrl = urlParams.get('returnUrl') || urlParams.get('from');
-            if (explicitReturnUrl) {
-                window.location.href = explicitReturnUrl;
-                return;
-            }
+        function returnToPreviousPage() {
+    // 1. Attempt to close the current window/tab (works if launched via JS/popup)
+    window.close();
 
-            // 2. Check if the browser passed a HTTP referrer from the previous page
-            if (document.referrer && document.referrer !== window.location.href) {
-                window.location.href = document.referrer;
-                return;
-            }
+    // 2. Check for explicit URL parameter (e.g. ?returnUrl=...)
+    const urlParams = new URLSearchParams(window.location.search);
+    const returnUrlParam = urlParams.get('returnUrl');
+    if (returnUrlParam) {
+        window.location.href = returnUrlParam;
+        return;
+    }
 
-            // 3. Check if opened as a popup/new tab window with a parent opener
-            if (window.opener && !window.opener.closed) {
-                window.opener.focus();
-                window.close();
-                return;
-            }
+    // 3. Use document referrer if available from the same origin/session
+    if (document.referrer && document.referrer !== window.location.href) {
+        window.location.href = document.referrer;
+        return;
+    }
 
-            // 4. Try browser history back navigation if history length exists
-            if (window.history.length > 1) {
-                window.history.back();
-                return;
-            }
-
-            // 5. Fallback URL if opened directly without any prior page referrer
-            window.location.href = 'https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector';
-        }
+    // 4. Primary Fallback: Redirect directly to your site
+    window.location.href = 'https://hughdickinson.github.io/';
+}
 
         function changeStep(direction) {
             if (currentStep === totalSteps && direction === 1) {
