@@ -305,26 +305,21 @@
         }
 
         function returnToPreviousPage() {
-    // 1. Attempt to close the current window/tab (works if launched via JS/popup)
-    window.close();
-
-    // 2. Check for explicit URL parameter (e.g. ?returnUrl=...)
-    const urlParams = new URLSearchParams(window.location.search);
-    const returnUrlParam = urlParams.get('returnUrl');
-    if (returnUrlParam) {
-        window.location.href = returnUrlParam;
-        return;
-    }
-
-    // 3. Use document referrer if available from the same origin/session
-    if (document.referrer && document.referrer !== window.location.href) {
-        window.location.href = document.referrer;
-        return;
-    }
-
-    // 4. Primary Fallback: Redirect directly to your site
-    window.location.href = 'https://hughdickinson.github.io/';
-}
+            const fallbackUrl = 'https://hughdickinson.github.io/';
+        
+            // 1. Check for custom URL parameter (e.g., tutorial.html?returnUrl=https://...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const returnUrlParam = urlParams.get('returnUrl');
+        
+            const destination = returnUrlParam || fallbackUrl;
+        
+            // 2. Safely redirect (handles both standard tabs and embedded iframes)
+            if (window.top !== window.self) {
+                window.top.location.href = destination;
+            } else {
+                window.location.href = destination;
+            }
+        }
 
         function changeStep(direction) {
             if (currentStep === totalSteps && direction === 1) {
