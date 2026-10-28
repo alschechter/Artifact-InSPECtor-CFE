@@ -102,10 +102,10 @@
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        In this task, please edit the machine predictions of artifact maps that are incorrect. Citizen Scientists determined which masks were incorrect in the classic Zooniverse project <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector" target="_blank" rel="noopener noreferrer">Artifact InSPECtor</a>. Now we will correct the masks needing editing. Artifacts are features that show up in the image that are not the astrophysical source data we are trying to capture. Your classifications on this European Space Telescope Euclid Q1 data will improve artifact detection models for future use with NASA’s Nancy Grace Roman Space Telescope.
+                        In this task, please edit the machine predictions of artifact maps that were deemed incorrect by citizen scientists in the classic Zooniverse project Artifact InSPECtor. Artifacts are features that show up in the image that are not the astrophysical source data we are trying to capture.
                     </p>
                     <p>
-                        In the task, you will see a large image covered in boxes. The boxes highlight different objects. By clicking on a box, you can zoom in on that object and see the mask.
+                        In the task, you will see a large image covered in boxes. By clicking on a box, you can zoom in on that object and see the mask.
                     </p>
                 </div>
             </div>
@@ -118,10 +118,7 @@
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        Once you have selected a box, you can edit the mask. We want to mask out all of the white or black pixels belonging to the artifact, but not extra grey background pixels. You can add or remove pixels from the mask by selecting the modifier mode on the left. “Paint” adds pixels when you click, and “erase” removes them.
-                    </p>
-                    <p>
-                        Below that, you can change how many pixels are affected when you click with the slider labeled, “modifier size.” You can also change mask opacities if you need to “see through” masks to the object.
+                       Once you have selected a box, you can edit the mask. We want to mask out all of the pixels belonging to the artifact, but not extra grey background pixels. You can change whether you are adding (“paint”) or removing (“erase”) pixels, change the brush size, and change mask opacities with the tools on the left. 
                     </p>
                 </div>
             </div>
@@ -134,10 +131,11 @@
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        In this task, we are focusing on artifacts. Recall from the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector" target="_blank" rel="noopener noreferrer">Artifact InSPECtor</a> that spectral stripes and emission lines are NOT artifacts. When you are editing each box, 1) remove any masking over a spectral stripe, or emission line and 2) edit masks on the artifact. Do not add any masks over spectral stripes or emission lines.
+                        In this task, we are focusing on artifacts. Recall from the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector" target="_blank" rel="noopener noreferrer">Artifact InSPECtor</a> that spectral stripes and emission lines are NOT artifacts. When you are editing each box, 1) remove any masking over a black and white spectral stripe or small blob only a few pixels across and 2) edit masks on the artifact. Do not add any masks over spectral stripes or small blobs. 
+
                     </p>
                     <p>
-                        Spectral stripes are extended, black and white stripes, and emission lines are small blobs only a few pixels across. Artifacts are objects like the double blobs of a zeroth order source, stars and their whiskers, snowballs, or white lines that are going in a different direction than the spectral stripes. If you need examples, see the field guide on the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector/classify/workflow/31550" target="_blank" rel="noopener noreferrer">Artifact InSPECtor workflow</a>.
+                        If you need examples, see the field guide on the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector/classify/workflow/31550" target="_blank" rel="noopener noreferrer">Artifact InSPECtor workflow</a>.
                     </p>
                 </div>
             </div>
@@ -150,10 +148,10 @@
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        Red boxes need lots of edits, yellow have some edits submitted but could use a few more, and green are considered done editing, or “good.” You can toggle on the “good,” green masks at any time with the button to the left.
+                        You can toggle on the “good,” green masks at any time with the button to the left. 
                     </p>
                     <p>
-                        You can also add an object if there is no box covering it. However, keep in mind that you can extend masks past the edges of the boxes. The boxes are guides, not limits. Before you add a new object, please toggle on “good masks” to ensure it has not been previously detected or edited.
+                        You can also add an object if there is no box covering it. However, keep in mind that you can extend masks past the edges of the boxes. The boxes are guides, not limits. Before you add a new object (no spectral stripes or small blobs), please toggle on “good masks” to ensure it has not been previously detected or edited.
                     </p>
                 </div>
             </div>
