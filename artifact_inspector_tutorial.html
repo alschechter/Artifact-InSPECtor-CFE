@@ -43,27 +43,27 @@
             opacity: 1;
         }
 
-        /* Explicit styling to make all inline hyperlinks standard blue and clearly clickable */
+        /* Inline hyperlinks styled in dark Zooniverse teal for high contrast on light backgrounds */
         .step-content a {
-            color: #2563eb !important; /* Standard recognizable blue */
+            color: #007f85 !important;
             font-weight: 600;
             text-decoration: underline;
-            transition: color 0.15s ease;
+            transition: color 0.15s ease-in-out;
         }
 
         .step-content a:hover {
-            color: #1d4ed8 !important; /* Darker blue on hover */
+            color: #00565a !important;
             text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-brand-50 text-slate-800 font-sans min-h-screen py-6 px-4 flex flex-col justify-center items-center">
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen py-6 px-4 flex flex-col justify-center items-center">
 
     <!-- Card Container -->
-    <div class="w-full max-w-2xl bg-white rounded-3xl shadow-xl border border-brand-200 overflow-hidden flex flex-col my-auto">
+    <div class="w-full max-w-2xl bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col my-auto">
         
-        <!-- Light Lavender Header Bar -->
-        <div class="bg-brand-100 p-6 text-center border-b border-brand-200 flex flex-col items-center justify-center">
+        <!-- Light Teal Header Bar -->
+        <div class="bg-teal-50/80 p-6 text-center border-b border-slate-200 flex flex-col items-center justify-center">
             
             <!-- Logo Image -->
             <div class="mb-4">
@@ -71,32 +71,32 @@
             </div>
 
             <!-- Step Tracker Pill -->
-            <div class="inline-block px-4 py-1 rounded-full bg-white border border-brand-300 text-brand-800 text-xs font-bold uppercase tracking-widest shadow-sm mb-3" id="step-tracker">
+            <div class="inline-block px-4 py-1 rounded-full bg-white border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-widest shadow-sm mb-3" id="step-tracker">
                 STEP 1 OF 6
             </div>
             
             <!-- Progress Bar Slider -->
-            <div class="w-full max-w-md bg-white h-3 rounded-full overflow-hidden border border-brand-200 shadow-inner">
-                <div id="progress-bar" class="bg-gradient-to-r from-brand-500 to-brand-700 h-full transition-all duration-300 ease-out w-[16.66%]"></div>
+            <div class="w-full max-w-md bg-slate-200 h-3 rounded-full overflow-hidden border border-slate-300/60 shadow-inner">
+                <div id="progress-bar" class="bg-gradient-to-r from-brand-500 to-brand-400 h-full transition-all duration-300 ease-out w-[16.66%]"></div>
             </div>
 
             <!-- Step Dots -->
             <div class="flex justify-center items-center gap-2.5 mt-3">
-                <button onclick="goToStep(1)" aria-label="Go to step 1" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-700 transition-all cursor-pointer"></button>
-                <button onclick="goToStep(2)" aria-label="Go to step 2" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer"></button>
-                <button onclick="goToStep(3)" aria-label="Go to step 3" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer"></button>
-                <button onclick="goToStep(4)" aria-label="Go to step 4" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer"></button>
-                <button onclick="goToStep(5)" aria-label="Go to step 5" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer"></button>
-                <button onclick="goToStep(6)" aria-label="Go to step 6" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(1)" aria-label="Go to step 1" class="step-dot w-2.5 h-2.5 rounded-full bg-brand-500 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(2)" aria-label="Go to step 2" class="step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(3)" aria-label="Go to step 3" class="step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(4)" aria-label="Go to step 4" class="step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(5)" aria-label="Go to step 5" class="step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer"></button>
+                <button onclick="goToStep(6)" aria-label="Go to step 6" class="step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer"></button>
             </div>
         </div>
 
-        <!-- Step Content Area (No Step Headings) -->
+        <!-- Step Content Area -->
         <div class="p-6 sm:p-8 flex-1">
 
             <!-- STEP 1 -->
             <div class="step-content active" id="step1">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step1.png" alt="Step 1 image" onerror="handleImageError(this, 1)" class="w-full h-full object-cover">
                 </div>
 
@@ -112,27 +112,26 @@
 
             <!-- STEP 2 -->
             <div class="step-content" id="step2">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step2.png" alt="Step 2 image" onerror="handleImageError(this, 2)" class="w-full h-full object-cover">
                 </div>
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                       Once you have selected a box, you can edit the mask. We want to mask out all of the pixels belonging to the artifact, but not extra grey background pixels. You can change whether you are adding (“paint”) or removing (“erase”) pixels, change the brush size, and change mask opacities with the tools on the left. 
+                        Once you have selected a box, you can edit the mask. We want to mask out all of the pixels belonging to the artifact, but not extra grey background pixels. You can change whether you are adding (“paint”) or removing (“erase”) pixels, change the brush size, and change mask opacities with the tools on the left.
                     </p>
                 </div>
             </div>
 
             <!-- STEP 3 -->
             <div class="step-content" id="step3">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step3.png" alt="Step 3 image" onerror="handleImageError(this, 3)" class="w-full h-full object-cover">
                 </div>
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        In this task, we are focusing on artifacts. Recall from the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector" target="_blank" rel="noopener noreferrer">Artifact InSPECtor</a> that spectral stripes and emission lines are NOT artifacts. When you are editing each box, 1) remove any masking over a black and white spectral stripe or small blob only a few pixels across and 2) edit masks on the artifact. Do not add any masks over spectral stripes or small blobs. 
-
+                        In this task, we are focusing on artifacts. Recall from the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector" target="_blank" rel="noopener noreferrer">Artifact InSPECtor</a> that spectral stripes and emission lines are NOT artifacts. When you are editing each box, 1) remove any masking over a black and white spectral stripe or small blob only a few pixels across and 2) edit masks on the artifact. Do not add any masks over spectral stripes or small blobs.
                     </p>
                     <p>
                         If you need examples, see the field guide on the classic <a href="https://www.zooniverse.org/projects/artifact-pipeline/artifact-inspector/classify/workflow/31550" target="_blank" rel="noopener noreferrer">Artifact InSPECtor workflow</a>.
@@ -142,13 +141,13 @@
 
             <!-- STEP 4 -->
             <div class="step-content" id="step4">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step4_v2.png" alt="Step 4 image" onerror="handleImageError(this, 4)" class="w-full h-full object-cover">
                 </div>
 
                 <div class="space-y-4 text-slate-700 text-base leading-relaxed">
                     <p>
-                        You can toggle on the “good,” green masks at any time with the button to the left. 
+                        You can toggle on the “good,” green masks at any time with the button to the left.
                     </p>
                     <p>
                         You can also add an object if there is no box covering it. However, keep in mind that you can extend masks past the edges of the boxes. The boxes are guides, not limits. Before you add a new object (no spectral stripes or small blobs), please toggle on “good masks” to ensure it has not been previously detected or edited.
@@ -158,7 +157,7 @@
 
             <!-- STEP 5 -->
             <div class="step-content" id="step5">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step5.png" alt="Step 5 image" onerror="handleImageError(this, 5)" class="w-full h-full object-cover">
                 </div>
 
@@ -171,7 +170,7 @@
 
             <!-- STEP 6 -->
             <div class="step-content" id="step6">
-                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-brand-950 aspect-video flex items-center justify-center border border-brand-200 shadow-sm">
+                <div class="relative w-full mb-6 rounded-2xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center border border-slate-200 shadow-sm">
                     <img src="step6.png" alt="Step 6 image" onerror="handleImageError(this, 6)" class="w-full h-full object-cover">
                 </div>
 
@@ -185,23 +184,29 @@
         </div>
 
         <!-- Footer Navigation Controls -->
-        <div class="p-6 bg-brand-50 border-t border-brand-200 flex items-center justify-between gap-4">
-            <button id="btn-back" onclick="changeStep(-1)" class="px-5 py-2.5 rounded-xl font-semibold text-brand-800 bg-white border border-brand-200 hover:bg-brand-100 hover:text-brand-900 focus:ring-2 focus:ring-brand-400/30 active:bg-brand-200 transition-all flex items-center gap-2 shadow-sm disabled:opacity-0 disabled:pointer-events-none">
+        <div class="p-6 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+            <button id="btn-back" onclick="changeStep(-1)" class="px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 hover:text-slate-900 focus:ring-2 focus:ring-brand-400/30 active:bg-slate-200 transition-all flex items-center gap-2 shadow-sm disabled:opacity-0 disabled:pointer-events-none">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 <span>Back</span>
             </button>
 
-            <button id="btn-next" onclick="changeStep(1)" class="ml-auto px-6 py-2.5 rounded-xl font-semibold text-white bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:ring-brand-400/40 active:bg-brand-900 transition-all flex items-center gap-2 shadow-md hover:shadow-lg">
+            <button id="btn-next" onclick="changeStep(1)" class="ml-auto px-6 py-2.5 rounded-xl font-semibold text-white bg-brand-500 hover:bg-brand-600 focus:ring-2 focus:ring-brand-400/40 active:bg-brand-700 transition-all flex items-center gap-2 shadow-md hover:shadow-lg">
                 <span id="btn-next-text">Next Step</span>
                 <svg id="btn-next-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
+
+            <!-- Non-clickable Done indicator badge for Step 6 -->
+            <div id="done-badge" class="ml-auto hidden px-5 py-2.5 rounded-xl font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300/80 flex items-center gap-2 shadow-sm select-none">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Done</span>
+            </div>
         </div>
 
     </div>
 
     <!-- Keyboard Navigation Tip -->
-    <div class="text-xs text-brand-800/60 font-medium mt-4 text-center">
-        Tip: Press <kbd class="px-1.5 py-0.5 bg-white text-brand-800 rounded border border-brand-200 font-mono shadow-sm">←</kbd> or <kbd class="px-1.5 py-0.5 bg-white text-brand-800 rounded border border-brand-200 font-mono shadow-sm">→</kbd> arrow keys to navigate steps.
+    <div class="text-xs text-slate-500 font-medium mt-4 text-center">
+        Tip: Press <kbd class="px-1.5 py-0.5 bg-white text-slate-700 rounded border border-slate-200 font-mono shadow-sm">←</kbd> or <kbd class="px-1.5 py-0.5 bg-white text-slate-700 rounded border border-slate-200 font-mono shadow-sm">→</kbd> arrow keys to navigate steps.
     </div>
 
     <script>
@@ -212,11 +217,11 @@
         function handleLogoError(imgElement) {
             const logoSvg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="220" height="90" viewBox="0 0 220 90" fill="none">
-                    <circle cx="110" cy="45" r="40" fill="white" stroke="#3B0764" stroke-width="2"/>
-                    <circle cx="110" cy="45" r="28" fill="#E9D5FF"/>
-                    <circle cx="110" cy="45" r="16" fill="#7E22CE"/>
-                    <text x="110" y="22" font-family="sans-serif" font-size="12" font-weight="bold" fill="#3B0764" text-anchor="middle" letter-spacing="2">ARTIFACT</text>
-                    <text x="110" y="78" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6B21A8" text-anchor="middle">InSPECtor</text>
+                    <circle cx="110" cy="45" r="40" fill="#11191D" stroke="#00979D" stroke-width="2"/>
+                    <circle cx="110" cy="45" r="28" fill="#1A262C"/>
+                    <circle cx="110" cy="45" r="16" fill="#00979D"/>
+                    <text x="110" y="22" font-family="sans-serif" font-size="12" font-weight="bold" fill="#2DD4BF" text-anchor="middle" letter-spacing="2">ARTIFACT</text>
+                    <text x="110" y="78" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">InSPECtor</text>
                 </svg>
             `;
             imgElement.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(logoSvg);
@@ -227,24 +232,36 @@
         function handleImageError(imgElement, stepNum) {
             const svgPlaceholder = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="337" viewBox="0 0 600 337" fill="none">
-                    <rect width="600" height="337" fill="#2E1065"/>
-                    <circle cx="120" cy="80" r="1.5" fill="#DDD6FE" opacity="0.8"/>
-                    <circle cx="480" cy="60" r="2" fill="#DDD6FE" opacity="0.9"/>
-                    <circle cx="520" cy="220" r="1.5" fill="#DDD6FE" opacity="0.6"/>
-                    <circle cx="80" cy="260" r="2" fill="#DDD6FE" opacity="0.7"/>
-                    <circle cx="300" cy="130" r="42" fill="#3B0764" stroke="#6B21A8" stroke-width="3"/>
-                    <path d="M280 140L295 120L310 135L325 115L335 140H280Z" fill="#A855F7"/>
-                    <circle cx="335" cy="105" r="7" fill="#C084FC"/>
-                    <text x="300" y="215" font-family="sans-serif" font-size="17" font-weight="600" fill="#E9D5FF" text-anchor="middle">
+                    <rect width="600" height="337" fill="#0D1317"/>
+                    <circle cx="120" cy="80" r="1.5" fill="#2DD4BF" opacity="0.8"/>
+                    <circle cx="480" cy="60" r="2" fill="#2DD4BF" opacity="0.9"/>
+                    <circle cx="520" cy="220" r="1.5" fill="#2DD4BF" opacity="0.6"/>
+                    <circle cx="80" cy="260" r="2" fill="#2DD4BF" opacity="0.7"/>
+                    <circle cx="300" cy="130" r="42" fill="#1A262C" stroke="#00979D" stroke-width="3"/>
+                    <path d="M280 140L295 120L310 135L325 115L335 140H280Z" fill="#2DD4BF"/>
+                    <circle cx="335" cy="105" r="7" fill="#5EEAD4"/>
+                    <text x="300" y="215" font-family="sans-serif" font-size="17" font-weight="600" fill="#E2E8F0" text-anchor="middle">
                         Step ${stepNum} (step${stepNum}.png)
                     </text>
-                    <text x="300" y="240" font-family="sans-serif" font-size="12" fill="#A855F7" text-anchor="middle">
+                    <text x="300" y="240" font-family="sans-serif" font-size="12" fill="#2DD4BF" text-anchor="middle">
                         Place step${stepNum}.png in folder to view
                     </text>
                 </svg>
             `;
             imgElement.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svgPlaceholder);
             imgElement.onerror = null;
+        }
+
+        function returnToPreviousPage() {
+            // 1. Check if a custom return URL parameter was passed (e.g., ?returnUrl=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const returnUrlParam = urlParams.get('returnUrl');
+
+            // 2. Direct destination fallback to your Github Pages site
+            const destination = returnUrlParam || 'https://hughdickinson.github.io/';
+
+            // 3. Redirect immediately
+            window.location.href = destination;
         }
 
         function updateStepUI() {
@@ -269,9 +286,9 @@
             const dots = document.querySelectorAll('.step-dot');
             dots.forEach((dot, index) => {
                 if (index + 1 === currentStep) {
-                    dot.className = 'step-dot w-2.5 h-2.5 rounded-full bg-brand-700 transition-all cursor-pointer';
+                    dot.className = 'step-dot w-2.5 h-2.5 rounded-full bg-brand-500 transition-all cursor-pointer';
                 } else {
-                    dot.className = 'step-dot w-2.5 h-2.5 rounded-full bg-brand-300 hover:bg-brand-400 transition-all cursor-pointer';
+                    dot.className = 'step-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer';
                 }
             });
 
@@ -283,47 +300,23 @@
                 btnBack.disabled = false;
             }
 
-            // Update Next / Return button
+            // Toggle Next button vs Done badge on step 6
             const btnNext = document.getElementById('btn-next');
-            const btnNextText = document.getElementById('btn-next-text');
-            const btnNextIcon = document.getElementById('btn-next-icon');
+            const doneBadge = document.getElementById('done-badge');
 
             if (currentStep === totalSteps) {
-                btnNextText.innerText = 'Return to Previous Page';
-                btnNext.className = 'ml-auto px-6 py-2.5 rounded-xl font-semibold text-white bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:ring-brand-400/40 active:bg-brand-900 transition-all flex items-center gap-2 shadow-md hover:shadow-lg';
-                btnNextIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>`;
+                btnNext.classList.add('hidden');
+                doneBadge.classList.remove('hidden');
             } else {
-                btnNextText.innerText = 'Next Step';
-                btnNext.className = 'ml-auto px-6 py-2.5 rounded-xl font-semibold text-white bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:ring-brand-400/40 active:bg-brand-900 transition-all flex items-center gap-2 shadow-md hover:shadow-lg';
-                btnNextIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>`;
+                btnNext.classList.remove('hidden');
+                doneBadge.classList.add('hidden');
             }
 
             // Scroll page smoothly back to top on step transition
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function returnToPreviousPage() {
-            const fallbackUrl = 'https://hughdickinson.github.io/';
-        
-            // 1. Check for custom URL parameter (e.g., tutorial.html?returnUrl=https://...)
-            const urlParams = new URLSearchParams(window.location.search);
-            const returnUrlParam = urlParams.get('returnUrl');
-        
-            const destination = returnUrlParam || fallbackUrl;
-        
-            // 2. Safely redirect (handles both standard tabs and embedded iframes)
-            if (window.top !== window.self) {
-                window.top.location.href = destination;
-            } else {
-                window.location.href = destination;
-            }
-        }
-
         function changeStep(direction) {
-            if (currentStep === totalSteps && direction === 1) {
-                returnToReferringPage();
-                return;
-            }
             const next = currentStep + direction;
             if (next >= 1 && next <= totalSteps) {
                 currentStep = next;
